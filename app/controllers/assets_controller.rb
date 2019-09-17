@@ -1,4 +1,5 @@
 class AssetsController < ApplicationController
+  before_action :authorize, except: []
   before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
   # GET /assets
@@ -69,6 +70,6 @@ class AssetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asset_params
-      params.require(:asset).permit(:name)
+      params.require(:asset).permit(:name, :image)
     end
 end

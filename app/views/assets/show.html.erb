@@ -3,6 +3,9 @@
 <p>
   <strong>Name:</strong>
   <%= @asset.name %>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @post.image %>
 </p>
 
 <%= link_to 'Edit', edit_asset_path(@asset) %> |
