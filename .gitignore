@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/config/secrets/*
 /node_modules
 /yarn-error.log
 

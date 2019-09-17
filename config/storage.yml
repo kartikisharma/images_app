@@ -1,0 +1,11 @@
+google:
+  service: GCS
+  project: image-app
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: image_app_storage
+
+google_dev:
+  service: GCS
+  project: image-app
+  credentials: <%= Rails.root.join("config/secrets/image_app_gcs_cred.json") %>
+  bucket: image_app_storage
