@@ -2,6 +2,7 @@
 
 <h1>Assets</h1>
 
+<h3><%= link_to 'Delete selected', method: :destroy_multiple %></h3>
 <table>
   <thead>
     <tr>
@@ -13,7 +14,10 @@
   <tbody>
     <% @assets.each do |asset| %>
       <tr>
-        <td><%= asset.name %></td>
+        <!-- display thumbnail, a sma -->
+        <td><%= check_box_tag "asset_ids[]", asset.id, false, class: 'selectable' %></td>
+        <!-- <td><%= check_box_tag("assets_selected[]", asset.id) %></td> -->
+        <td><%= asset.image.filename %></td>
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
         <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>

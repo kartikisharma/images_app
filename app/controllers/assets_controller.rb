@@ -62,6 +62,14 @@ class AssetsController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    Asset.destroy(params[:assets_ids])
+    respond_to do |format|
+      format.html { redirect_to assets_url }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_asset
@@ -72,4 +80,4 @@ class AssetsController < ApplicationController
     def asset_params
       params.require(:asset).permit(:name, :image)
     end
-end
+  end
