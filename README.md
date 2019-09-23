@@ -15,3 +15,8 @@ This is an implementation of some features requested by the Shopify backend deve
 - [ ] User can add multiple image to one record
   - [ ] User views the list of image uploads NOT the list of asset records
   - [ ] User can delete some image(s) in the record that corresponds to it
+
+# Screenshots
+<img src="Screen Shot 2019-09-23 at 1.35.14 AM.png">
+<img src="Screen Shot 2019-09-23 at 1.35.31 AM.png">
+<img src="Screen Shot 2019-09-23 at 1.35.45 AM.png">
