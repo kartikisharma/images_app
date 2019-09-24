@@ -9,6 +9,11 @@ This is an implementation of some features requested by the Shopify backend deve
   <li> User can upload one image at a time </li>
   <li> User can delete an individual image upload one at a time </li>
 </ul>
+
+# Instructions to run
+This app is live via Heroku on: https://frozen-castle-82493.herokuapp.com/
+
+To run locally, you will need your own Google Cloud credentials to store image uploads, and PostgreSQL credentials. 
   
 # Features still in development
 - [ ] User can delete multiple images at once
