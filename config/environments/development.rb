@@ -54,4 +54,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_storage.service = :google_dev
+
+  config.log_level = :debug
 end

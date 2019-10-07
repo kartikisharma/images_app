@@ -2,7 +2,7 @@
 
 <h1>Assets</h1>
 
-<h3><%= link_to 'Delete selected', method: :destroy_multiple %></h3>
+<%= form_tag destroy_multiple_assets_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
 <table>
   <thead>
     <tr>
@@ -14,9 +14,8 @@
   <tbody>
     <% @assets.each do |asset| %>
       <tr>
-        <!-- display thumbnail, a sma -->
-        <td><%= check_box_tag "asset_ids[]", asset.id, false, class: 'selectable' %></td>
-        <!-- <td><%= check_box_tag("assets_selected[]", asset.id) %></td> -->
+        <!-- TODO display thumbnail, a small thumbnail -->
+        <td><%= check_box_tag "delete[]", asset.id, false, class: 'selectable' %></td>
         <td><%= asset.image.filename %></td>
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
@@ -25,7 +24,8 @@
     <% end %>
   </tbody>
 </table>
-
+<%= submit_tag "Delete selected" %>
+<% end %>
 <br>
 
 <%= link_to 'New Asset', new_asset_path %>

@@ -55,6 +55,7 @@ class AssetsController < ApplicationController
   # DELETE /assets/1
   # DELETE /assets/1.json
   def destroy
+    Rails.logger.debug("My object: #{@asset.id}")
     @asset.destroy
     respond_to do |format|
       format.html { redirect_to assets_url, notice: 'Asset was successfully destroyed.' }
@@ -63,7 +64,10 @@ class AssetsController < ApplicationController
   end
 
   def destroy_multiple
-    Asset.destroy(params[:assets_ids])
+    Rails.logger.debug("My assets to be deleted:")
+    Rails.logger.debug(params[:delete])
+    ids = params[:delete]
+    Asset.destroy(ids) if ids
     respond_to do |format|
       format.html { redirect_to assets_url }
       format.json { head :no_content }
